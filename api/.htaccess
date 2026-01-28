@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Solo permitir POST
+  RewriteCond %{REQUEST_METHOD} !POST
+  RewriteRule .* - [F]
+</IfModule>

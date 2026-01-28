@@ -1,0 +1,172 @@
+<section class="bg-white dark:bg-slate-900 p-6 rounded-lg border border-gray-200 dark:border-slate-700
+         max-w-[1200px] mx-auto px-4 md:px-6 transition-colors duration-300">
+
+  <h2 class="text-xl font-semibold mb-16 mt-6 text-center uppercase tracking-wide
+           text-slate-900 dark:text-white">
+    Baja de trabajador
+  </h2>
+
+  <form id="baja-form" class="max-w-[900px] mx-auto">
+
+    <!-- =======================================================
+         BLOQUE DATOS GENERALES
+    ======================================================= -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+
+      <!-- Tipo de baja -->
+      <div class="md:col-span-2">
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Tipo de baja / Motivo
+        </label>
+        <select id="tipoBaja" required class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1">
+          <option value="">Seleccionar</option>
+          <option value="baja_voluntaria">Baja voluntaria</option>
+          <option value="periodo_prueba">No supera periodo de prueba</option>
+          <option value="paralizacion_fijo">Paralización fijo discontinuo</option>
+          <option value="despido">Despido</option>
+        </select>
+      </div>
+
+      <!-- Empresa -->
+      <div>
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Local / Empresa
+        </label>
+        <input id="empresa" type="text" required class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1" />
+      </div>
+
+      <!-- Fecha de baja -->
+      <div>
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Fecha de baja
+        </label>
+        <input id="fechaBaja" type="date" required class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1" />
+      </div>
+
+      <!-- Apellidos -->
+      <div>
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Apellidos
+        </label>
+        <input id="apellidos" type="text" required class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1" />
+      </div>
+
+      <!-- Nombre -->
+      <div>
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Nombre
+        </label>
+        <input id="nombre" type="text" required class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1" />
+      </div>
+
+      <!-- NAF + NIF -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:col-span-2">
+
+        <!-- NAF -->
+        <div>
+          <label class="font-medium text-sm text-slate-700 dark:text-white">
+            NAF
+          </label>
+          <div class="flex gap-2">
+            <input id="naf1" maxlength="2" required class="w-16 border border-gray-300 dark:border-slate-600
+                     bg-white dark:bg-slate-800
+                     text-slate-900 dark:text-white
+                     rounded-md px-2 py-1 text-center" />
+            <input id="naf2" maxlength="8" required class="flex-1 border border-gray-300 dark:border-slate-600
+                     bg-white dark:bg-slate-800
+                     text-slate-900 dark:text-white
+                     rounded-md px-2 py-1 text-center" />
+            <input id="naf3" maxlength="2" required class="w-16 border border-gray-300 dark:border-slate-600
+                     bg-white dark:bg-slate-800
+                     text-slate-900 dark:text-white
+                     rounded-md px-2 py-1 text-center" />
+          </div>
+        </div>
+
+        <!-- NIF -->
+        <div>
+          <label class="font-medium text-sm text-slate-700 dark:text-white">
+            NIF
+          </label>
+          <input id="nif" maxlength="9" required class="w-full border border-gray-300 dark:border-slate-600
+                   bg-white dark:bg-slate-800
+                   text-slate-900 dark:text-white
+                   rounded-md px-2 py-1 text-center" />
+        </div>
+
+      </div>
+
+      <!-- Vacaciones -->
+      <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Selector Sí / No -->
+        <div>
+          <label class="font-medium text-sm text-slate-700 dark:text-white">
+            Vacaciones a disfrutar
+          </label>
+          <select id="vacaciones" required class="w-full border border-gray-300 dark:border-slate-600
+                   bg-white dark:bg-slate-800
+                   text-slate-900 dark:text-white
+                   rounded-md px-2 py-1">
+            <option value="">Seleccionar</option>
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <!-- Nº días -->
+        <div>
+          <label class="font-medium text-sm text-slate-700 dark:text-white">
+            Nº días de vacaciones
+          </label>
+          <input id="diasVacaciones" type="number" min="1" max="365" disabled class="w-full border border-gray-300 dark:border-slate-600
+                   bg-gray-100 dark:bg-slate-700
+                   text-slate-900 dark:text-white
+                   rounded-md px-2 py-1
+                   disabled:cursor-not-allowed disabled:opacity-70" />
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- =======================================================
+         ADJUNTO CARTA DE BAJA
+    ======================================================= -->
+    <div class="mt-10 mb-8 w-full">
+      <label class="font-medium text-sm text-slate-700 dark:text-white">
+        Carta de baja firmada
+        <span class="text-xs text-gray-500 dark:text-slate-400 block">
+          (Obligatoria excepto en caso de despido)
+        </span>
+      </label>
+      <input id="documentoBaja" type="file"
+        accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        class="mt-2 text-slate-900 dark:text-white" />
+    </div>
+
+    <!-- =======================================================
+         BOTÓN
+    ======================================================= -->
+    <button id="enviar" disabled class="mt-10 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md
+             disabled:opacity-50 transition-colors duration-200">
+      Enviar comunicación
+    </button>
+
+  </form>
+</section>

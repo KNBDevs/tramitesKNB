@@ -1,0 +1,108 @@
+<section
+  class="bg-white dark:bg-slate-900 p-6 rounded-lg border border-gray-200 dark:border-slate-700
+         max-w-[1200px] mx-auto px-4 md:px-6 transition-colors duration-300">
+
+  <h2
+    class="text-xl font-semibold mb-16 mt-6 text-center uppercase tracking-wide
+           text-slate-900 dark:text-white">
+    Consultas y comunicaciones generales
+  </h2>
+
+  <p
+    class="text-sm text-gray-600 dark:text-slate-300 mb-10 max-w-[900px] mx-auto text-center">
+    Espacio destinado a consultas, solicitudes o comunicaciones laborales que no encajan en los
+    procedimientos habituales (altas, bajas, incidencias, sanciones o cambios de jornada).
+  </p>
+
+  <!-- =======================================================
+       FORMULARIO CONSULTAS
+  ======================================================== -->
+  <form id="consulta-form" class="max-w-[900px] mx-auto space-y-6">
+
+    <!-- DATOS GENERALES -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <div>
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Empresa / Centro
+        </label>
+        <input type="text" required
+          class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1" />
+      </div>
+
+      <div>
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Fecha de la consulta
+        </label>
+        <input type="date" required
+          class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1" />
+      </div>
+
+      <div>
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Trabajador afectado (opcional)
+        </label>
+        <input type="text"
+          class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1" />
+      </div>
+
+      <div>
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Tipo de consulta
+        </label>
+        <select required
+          class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1">
+          <option value="">Seleccionar</option>
+          <option value="contractual">Contractual / Legal</option>
+          <option value="organizativa">Organizativa</option>
+          <option value="procedimiento">Procedimiento interno</option>
+          <option value="preventiva">Comunicación preventiva</option>
+          <option value="otra">Otra / No clasificada</option>
+        </select>
+      </div>
+
+    </div>
+
+    <!-- DESCRIPCIÓN -->
+    <div>
+      <label class="font-medium text-sm text-slate-700 dark:text-white">
+        Descripción detallada de la consulta
+      </label>
+      <textarea rows="6" required
+        placeholder="Describe la situación con el mayor detalle posible..."
+        class="w-full border border-gray-300 dark:border-slate-600
+               bg-white dark:bg-slate-800
+               text-slate-900 dark:text-white
+               rounded-md px-3 py-2 resize-none"></textarea>
+    </div>
+
+    <!-- ADJUNTOS -->
+    <div>
+      <label class="font-medium text-sm text-slate-700 dark:text-white">
+        Adjuntar documentación (opcional)
+      </label>
+      <input type="file" multiple
+        class="block mt-2 text-sm text-slate-900 dark:text-white" />
+    </div>
+
+    <!-- ENVÍO -->
+    <button id="enviar" type="submit"
+      class="mt-10 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md
+             transition-colors duration-200">
+      Enviar consulta
+    </button>
+
+  </form>
+</section>

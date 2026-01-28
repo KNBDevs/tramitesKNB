@@ -1,0 +1,222 @@
+<section
+  class="bg-white dark:bg-slate-900 p-6 rounded-lg border border-gray-200 dark:border-slate-700
+         max-w-[1200px] mx-auto px-4 md:px-6 transition-colors duration-300">
+
+  <h2
+    class="text-xl font-semibold mb-16 mt-6 text-center uppercase tracking-wide
+           text-slate-900 dark:text-white">
+    Cambio de jornada
+  </h2>
+
+  <form id="cambio-jornada-form" class="max-w-[900px] mx-auto">
+
+    <!-- =======================================================
+         BLOQUE DATOS GENERALES
+    ======================================================= -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+
+      <!-- Empresa -->
+      <div>
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Local / Empresa
+        </label>
+        <input id="empresa" type="text" required
+          class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1" />
+      </div>
+
+      <!-- Fecha cambio -->
+      <div>
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Inicio del cambio de jornada
+        </label>
+        <input id="fechaCambio" type="date" required
+          class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1" />
+      </div>
+
+      <!-- Apellidos -->
+      <div>
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Apellidos
+        </label>
+        <input id="apellidos" type="text" required
+          class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1" />
+      </div>
+
+      <!-- Nombre -->
+      <div>
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Nombre
+        </label>
+        <input id="nombre" type="text" required
+          class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1" />
+      </div>
+
+      <!-- NAF + NIF -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:col-span-2">
+
+        <!-- NAF -->
+        <div>
+          <label class="font-medium text-sm text-slate-700 dark:text-white">
+            NAF
+          </label>
+          <div class="flex gap-2">
+            <input id="naf1" maxlength="2" required
+              class="w-16 border border-gray-300 dark:border-slate-600
+                     bg-white dark:bg-slate-800
+                     text-slate-900 dark:text-white
+                     rounded-md px-2 py-1 text-center" />
+            <input id="naf2" maxlength="8" required
+              class="flex-1 border border-gray-300 dark:border-slate-600
+                     bg-white dark:bg-slate-800
+                     text-slate-900 dark:text-white
+                     rounded-md px-2 py-1 text-center" />
+            <input id="naf3" maxlength="2" required
+              class="w-16 border border-gray-300 dark:border-slate-600
+                     bg-white dark:bg-slate-800
+                     text-slate-900 dark:text-white
+                     rounded-md px-2 py-1 text-center" />
+          </div>
+        </div>
+
+        <!-- NIF -->
+        <div>
+          <label class="font-medium text-sm text-slate-700 dark:text-white">
+            NIF
+          </label>
+          <input id="nif" maxlength="9" required
+            class="w-full border border-gray-300 dark:border-slate-600
+                   bg-white dark:bg-slate-800
+                   text-slate-900 dark:text-white
+                   rounded-md px-2 py-1 text-center" />
+        </div>
+
+      </div>
+
+      <!-- SALARIO -->
+      <div class="md:col-span-2">
+        <label class="font-medium text-sm block mb-2 text-slate-700 dark:text-white">
+          Salario
+        </label>
+
+        <div class="flex flex-wrap gap-6 items-center">
+
+          <select id="tipoSalario" required
+            class="border border-gray-300 dark:border-slate-600
+                   bg-white dark:bg-slate-800
+                   text-slate-900 dark:text-white
+                   rounded-md px-2 py-1">
+            <option value="">Seleccionar</option>
+            <option value="convenio">Convenio</option>
+            <option value="neto">Neto</option>
+          </select>
+
+          <div class="flex items-center gap-2">
+            <input id="salarioNeto" type="number" min="0" step="0.01" disabled
+              class="w-40 border border-gray-300 dark:border-slate-600
+                     bg-gray-100 dark:bg-slate-700
+                     text-slate-900 dark:text-white
+                     rounded-md px-2 py-1
+                     disabled:cursor-not-allowed disabled:opacity-70" />
+            <span class="text-sm text-slate-700 dark:text-white">€</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- =======================================================
+         HORARIO SEMANAL
+    ======================================================= -->
+    <div class="mt-10 mb-10">
+      <label class="font-medium text-sm block mb-4 text-slate-700 dark:text-white">
+        Distribución horaria tras el cambio
+      </label>
+
+      <div id="horario-semanal"
+        class="grid w-full grid-cols-[140px_repeat(7,1fr)] gap-2 items-center text-sm
+               text-slate-900 dark:text-white">
+
+        <div></div>
+        <div class="text-center font-medium border border-gray-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-800 py-1">L</div>
+        <div class="text-center font-medium border border-gray-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-800 py-1">M</div>
+        <div class="text-center font-medium border border-gray-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-800 py-1">X</div>
+        <div class="text-center font-medium border border-gray-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-800 py-1">J</div>
+        <div class="text-center font-medium border border-gray-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-800 py-1">V</div>
+        <div class="text-center font-medium border border-gray-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-800 py-1">S</div>
+        <div class="text-center font-medium border border-gray-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-800 py-1">D</div>
+
+        <div class="text-left whitespace-nowrap">Turno 1: Inicio</div>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+
+        <div class="text-left whitespace-nowrap">Turno 1: Fin</div>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+
+        <div class="text-left whitespace-nowrap">Turno 2: Inicio</div>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+
+        <div class="text-left whitespace-nowrap">Turno 2: Fin</div>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+        <select class="w-full border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm px-1 py-0.5" required></select>
+
+      </div>
+    </div>
+
+    <!-- =======================================================
+         DOCUMENTO
+    ======================================================= -->
+    <div class="mb-8">
+      <label class="font-medium text-sm block mb-2 text-slate-700 dark:text-white">
+        Documento de cambio de jornada
+      </label>
+
+      <input id="docCambio" type="file" accept="application/pdf" required
+        class="block text-slate-900 dark:text-white" />
+    </div>
+
+    <!-- =======================================================
+         BOTÓN
+    ======================================================= -->
+    <button id="enviar" disabled
+      class="mt-10 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md
+             disabled:opacity-50 transition-colors duration-200">
+      Enviar comunicación
+    </button>
+
+  </form>
+</section>

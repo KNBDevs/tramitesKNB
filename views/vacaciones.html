@@ -1,0 +1,94 @@
+<section
+  class="bg-white dark:bg-slate-900 p-6 rounded-lg border border-gray-200 dark:border-slate-700
+         max-w-[800px] mx-auto px-4 md:px-6 transition-colors duration-300">
+
+  <h2
+    class="text-xl font-semibold mb-12 mt-6 text-center uppercase tracking-wide
+           text-slate-900 dark:text-white">
+    Calculadora de vacaciones
+  </h2>
+
+  <div class="max-w-[600px] mx-auto space-y-6">
+
+    <!-- Fecha alta -->
+    <div>
+      <label class="font-medium text-sm text-slate-700 dark:text-white">
+        Fecha de alta del trabajador
+      </label>
+      <input id="fechaAlta" type="date" required
+        class="w-full border border-gray-300 dark:border-slate-600
+               bg-white dark:bg-slate-800
+               text-slate-900 dark:text-white
+               rounded-md px-2 py-1" />
+    </div>
+
+    <!-- Fecha cálculo -->
+    <div>
+      <label
+        class="font-medium text-sm text-slate-700 dark:text-white flex items-center gap-3">
+        Fecha de cálculo
+        <span
+          class="flex items-center gap-1 text-xs text-gray-500 dark:text-slate-400">
+          <input id="hastaHoy" type="checkbox" class="accent-blue-600" />
+          Hasta hoy
+        </span>
+      </label>
+
+      <input id="fechaCalculo" type="date"
+        class="w-full border border-gray-300 dark:border-slate-600
+               bg-white dark:bg-slate-800
+               text-slate-900 dark:text-white
+               rounded-md px-2 py-1 mt-1" />
+    </div>
+
+    <!-- Vacaciones disfrutadas -->
+    <div>
+      <label class="font-medium text-sm text-slate-700 dark:text-white">
+        Vacaciones ya disfrutadas
+        <span class="text-xs text-gray-500 dark:text-slate-400">
+          (total acumulado)
+        </span>
+      </label>
+
+      <input id="vacacionesDisfrutadas" type="number" min="0" step="0.5" placeholder="0"
+        class="w-full border border-gray-300 dark:border-slate-600
+               bg-white dark:bg-slate-800
+               text-slate-900 dark:text-white
+               rounded-md px-2 py-1 mt-1" />
+    </div>
+
+    <!-- Resultados -->
+    <div id="resultado"
+      class="mt-10 p-4 rounded-lg border border-gray-200 dark:border-slate-600
+             bg-gray-50 dark:bg-slate-800 hidden">
+
+      <p class="text-sm text-slate-700 dark:text-slate-300 mb-2">
+        <strong>Días trabajados:</strong>
+        <span id="diasTrabajados"></span>
+      </p>
+
+      <p class="text-sm text-slate-700 dark:text-slate-300 mb-2">
+        <strong>Vacaciones generadas (exactas):</strong>
+        <span id="vacacionesExactas"></span> días
+      </p>
+
+      <p class="text-sm text-slate-700 dark:text-slate-300 mb-2">
+        <strong>Vacaciones disfrutadas:</strong>
+        <span id="vacacionesDisfrutadasResultado"></span> días
+      </p>
+
+      <p class="text-sm text-slate-700 dark:text-slate-300 mb-2">
+        <strong>Vacaciones disponibles:</strong>
+        <span id="vacacionesDisponibles"></span> días
+      </p>
+
+      <p class="mt-3 text-xs text-gray-500 dark:text-slate-400">
+        * Cálculo basado en 2,5 días por cada 30 días trabajados.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<script type="module" src="/js/vacaciones.js"></script>

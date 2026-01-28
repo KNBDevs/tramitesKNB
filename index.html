@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Trámites Laborales | KNB</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+
+  <!-- ESTILOS PROPIOS -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- TAILWIND CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CONFIG TAILWIND (DARK MODE POR CLASE) -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+</head>
+
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
+
+  <!-- HEADER -->
+  <header class="relative bg-blue-700 dark:bg-blue-900 text-white py-6 px-6 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-center relative">
+
+      <!-- Logo izquierda -->
+      <div class="absolute left-0 flex items-center">
+        <img src="assets/img/logo.png" alt="KNB Logo" class="h-10 w-auto" />
+      </div>
+
+      <!-- Texto centrado -->
+      <div class="text-center">
+        <h1 class="text-2xl md:text-3xl font-semibold tracking-wide">
+          Trámites Laborales
+        </h1>
+        <p class="text-sm md:text-base text-blue-200 dark:text-blue-300 mt-1">
+          KNB Soluciones de Empresa
+        </p>
+      </div>
+
+      <!-- Logo derecha -->
+      <div class="absolute right-0 hidden md:flex items-center">
+        <img src="assets/img/logo.png" alt="KNB Logo" class="h-10 w-auto" />
+      </div>
+
+    </div>
+  </header>
+
+  <!-- NAV TABS -->
+  <nav
+    class="tabs flex justify-center bg-white dark:bg-slate-900 border-b border-slate-300 dark:border-slate-700 transition-colors duration-300">
+    <div class="flex flex-wrap justify-center gap-2 px-4 py-3">
+
+      <button class="tab active text-slate-900 dark:text-white" data-view="altas">
+        ALTAS
+      </button>
+
+      <button class="tab text-slate-700 dark:text-white/80 hover:dark:text-white" data-view="bajas">
+        BAJAS
+      </button>
+
+      <button class="tab text-slate-700 dark:text-white/80 hover:dark:text-white" data-view="cambio-jornada">
+        CAMBIOS JORNADA
+      </button>
+
+      <button class="tab text-slate-700 dark:text-white/80 hover:dark:text-white" data-view="incidencias">
+        INCIDENCIAS
+      </button>
+
+      <button class="tab text-slate-700 dark:text-white/80 hover:dark:text-white" data-view="sanciones">
+        SANCIONES
+      </button>
+
+      <button class="tab text-slate-700 dark:text-white/80 hover:dark:text-white" data-view="consultas">
+        CONSULTAS
+      </button>
+
+      <!-- ✅ NUEVA PESTAÑA: VACACIONES -->
+      <button
+        class="tab tab-vacaciones text-emerald-700 dark:text-emerald-300 hover:text-emerald-800 hover:dark:text-emerald-200"
+        data-view="vacaciones">
+        VACACIONES
+      </button>
+
+
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <main id="content" class="content px-4 py-6">
+    <!-- aquí se cargan las vistas -->
+  </main>
+
+  <!-- DARK MODE TOGGLE -->
+  <button id="theme-toggle" aria-label="Cambiar modo" class="fixed bottom-6 right-6 z-50 flex items-center justify-center
+           w-12 h-12 rounded-full
+           bg-blue-600 text-white
+           dark:bg-blue-400 dark:text-slate-900
+           shadow-xl border border-blue-700 dark:border-blue-300
+           hover:scale-110 transition-all duration-300">
+    🌙
+  </button>
+
+  <!-- HELP / INFO BUTTON -->
+  <button id="help-toggle" aria-label="Guía de uso" class="fixed bottom-20 right-6 z-50 flex items-center justify-center
+           w-9 h-9 rounded-full
+           bg-white text-blue-700
+           dark:bg-slate-800 dark:text-blue-300
+           shadow-lg border border-slate-300 dark:border-slate-700
+           hover:scale-110 transition-all duration-300 text-sm font-semibold">
+    ℹ️
+  </button>
+
+  <!-- SCRIPTS -->
+  <script type="module" src="assets/js/app.js"></script>
+  <script src="assets/js/theme.js"></script>
+
+</body>
+
+</html>

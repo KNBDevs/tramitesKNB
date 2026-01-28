@@ -1,0 +1,80 @@
+:root {
+    --bg: #f6f7fb;
+    --card: #ffffff;
+    --primary: #6b8afd;
+    --primary-soft: #e9edff;
+    --text: #2d2d2d;
+    --muted: #777;
+    --border: #ddd;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* Header */
+.app-header {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 4px;
+    padding: 0.5rem;
+    background: var(--primary-soft);
+    overflow-x: auto;
+}
+
+.tab {
+    border: none;
+    padding: 0.6rem 1rem;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 6px;
+    color: var(--text);
+}
+
+.tab.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* Content */
+.content {
+    padding: 1.5rem;
+}
+
+.view {
+    background: var(--card);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+
+
+/* Placeholder form */
+.view h2 {
+    margin-top: 0;
+}
+
+.placeholder {
+    color: var(--muted);
+    font-style: italic;
+}
+
+.modal-open {
+  overflow: hidden;
+}

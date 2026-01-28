@@ -1,0 +1,178 @@
+<section
+  class="bg-white dark:bg-slate-900 p-6 rounded-lg border border-gray-200 dark:border-slate-700
+         max-w-[1200px] mx-auto px-4 md:px-6 transition-colors duration-300">
+
+  <h2
+    class="text-xl font-semibold mb-16 mt-6 text-center uppercase tracking-wide
+           text-slate-900 dark:text-white">
+    Sanción / Conducta sancionable
+  </h2>
+
+  <form id="sancion-form" class="max-w-[900px] mx-auto">
+
+    <!-- =======================================================
+         BLOQUE DATOS GENERALES
+    ======================================================= -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+
+      <!-- Empresa -->
+      <div>
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Local / Empresa
+        </label>
+        <input
+          id="empresa"
+          type="text"
+          required
+          class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1"
+        />
+      </div>
+
+      <!-- Fecha de comunicación -->
+      <div>
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Fecha de comunicación
+        </label>
+        <input
+          id="fechaSancion"
+          type="date"
+          required
+          class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1"
+        />
+      </div>
+
+      <!-- Apellidos -->
+      <div>
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Apellidos
+        </label>
+        <input
+          id="apellidos"
+          type="text"
+          required
+          class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1"
+        />
+      </div>
+
+      <!-- Nombre -->
+      <div>
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Nombre
+        </label>
+        <input
+          id="nombre"
+          type="text"
+          required
+          class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1"
+        />
+      </div>
+
+      <!-- NAF + NIF -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:col-span-2">
+
+        <!-- NAF -->
+        <div>
+          <label class="font-medium text-sm text-slate-700 dark:text-white">
+            NAF
+          </label>
+          <div class="flex gap-2">
+            <input
+              id="naf1"
+              maxlength="2"
+              required
+              class="w-16 border border-gray-300 dark:border-slate-600
+                     bg-white dark:bg-slate-800
+                     text-slate-900 dark:text-white
+                     rounded-md px-2 py-1 text-center"
+            />
+            <input
+              id="naf2"
+              maxlength="8"
+              required
+              class="flex-1 border border-gray-300 dark:border-slate-600
+                     bg-white dark:bg-slate-800
+                     text-slate-900 dark:text-white
+                     rounded-md px-2 py-1 text-center"
+            />
+            <input
+              id="naf3"
+              maxlength="2"
+              required
+              class="w-16 border border-gray-300 dark:border-slate-600
+                     bg-white dark:bg-slate-800
+                     text-slate-900 dark:text-white
+                     rounded-md px-2 py-1 text-center"
+            />
+          </div>
+        </div>
+
+        <!-- NIF -->
+        <div>
+          <label class="font-medium text-sm text-slate-700 dark:text-white">
+            NIF
+          </label>
+          <input
+            id="nif"
+            maxlength="9"
+            required
+            class="w-full border border-gray-300 dark:border-slate-600
+                   bg-white dark:bg-slate-800
+                   text-slate-900 dark:text-white
+                   rounded-md px-2 py-1 text-center"
+          />
+        </div>
+
+      </div>
+    </div>
+
+    <!-- =======================================================
+         DESCRIPCIÓN DE LOS HECHOS
+    ======================================================= -->
+    <div class="mb-8">
+      <label class="font-medium text-sm block mb-2 text-slate-700 dark:text-white">
+        Descripción detallada de la conducta o comportamiento sancionable
+      </label>
+
+      <textarea
+        id="descripcion"
+        rows="8"
+        minlength="200"
+        required
+        placeholder="Describa de forma clara, objetiva y detallada los hechos ocurridos (mínimo 200 caracteres)."
+        class="w-full border border-gray-300 dark:border-slate-600
+               bg-white dark:bg-slate-800
+               text-slate-900 dark:text-white
+               rounded-md px-3 py-2 resize-none"
+      ></textarea>
+
+      <p class="text-xs text-gray-500 dark:text-slate-400 mt-2">
+        Mínimo 200 caracteres obligatorios.
+      </p>
+    </div>
+
+    <!-- =======================================================
+         BOTÓN
+    ======================================================= -->
+    <button
+      id="enviar"
+      disabled
+      class="mt-10 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md
+             disabled:opacity-50 transition-colors duration-200"
+    >
+      Enviar comunicación
+    </button>
+
+  </form>
+</section>

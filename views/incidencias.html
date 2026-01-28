@@ -1,0 +1,256 @@
+<section class="bg-white dark:bg-slate-900 p-6 rounded-lg border border-gray-200 dark:border-slate-700
+         max-w-[1200px] mx-auto px-4 md:px-6 transition-colors duration-300">
+
+  <h2 class="text-xl font-semibold mb-16 mt-6 text-center uppercase tracking-wide
+           text-slate-900 dark:text-white">
+    Incidencia
+  </h2>
+
+  <!-- ⬇️ CAMBIO CLAVE: novalidate -->
+  <form id="incidencia-form" class="max-w-[900px] mx-auto" novalidate>
+
+    <!-- =======================================================
+         BLOQUE DATOS COMUNES
+    ======================================================= -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+
+      <div>
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Local / Empresa
+        </label>
+        <input id="empresa" type="text" required class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1" />
+      </div>
+
+      <div>
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Fecha de comunicación
+        </label>
+        <input id="fecha" type="date" required class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1" />
+      </div>
+
+      <div>
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Apellidos
+        </label>
+        <input id="apellidos" type="text" required class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1" />
+      </div>
+
+      <div>
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Nombre
+        </label>
+        <input id="nombre" type="text" required class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1" />
+      </div>
+
+      <!-- NAF + NIF -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:col-span-2">
+
+        <!-- NAF -->
+        <div>
+          <label class="font-medium text-sm text-slate-700 dark:text-white">
+            NAF
+          </label>
+          <div class="flex gap-2">
+            <input id="naf1" maxlength="2" required class="w-16 border border-gray-300 dark:border-slate-600
+                     bg-white dark:bg-slate-800
+                     text-slate-900 dark:text-white
+                     rounded-md px-2 py-1 text-center" />
+            <input id="naf2" maxlength="8" required class="flex-1 border border-gray-300 dark:border-slate-600
+                     bg-white dark:bg-slate-800
+                     text-slate-900 dark:text-white
+                     rounded-md px-2 py-1 text-center" />
+            <input id="naf3" maxlength="2" required class="w-16 border border-gray-300 dark:border-slate-600
+                     bg-white dark:bg-slate-800
+                     text-slate-900 dark:text-white
+                     rounded-md px-2 py-1 text-center" />
+          </div>
+        </div>
+
+        <!-- NIF -->
+        <div>
+          <label class="font-medium text-sm text-slate-700 dark:text-white">
+            NIF
+          </label>
+          <input id="nif" maxlength="9" required class="w-full border border-gray-300 dark:border-slate-600
+                   bg-white dark:bg-slate-800
+                   text-slate-900 dark:text-white
+                   rounded-md px-2 py-1 text-center" />
+        </div>
+
+      </div>
+
+      <div>
+        <label class="font-medium text-sm text-slate-700 dark:text-white">
+          Tipo de incidencia
+        </label>
+        <select id="tipoIncidencia" required class="w-full border border-gray-300 dark:border-slate-600
+                 bg-white dark:bg-slate-800
+                 text-slate-900 dark:text-white
+                 rounded-md px-2 py-1">
+          <option value="">Seleccionar</option>
+          <option value="anticipo">Anticipo</option>
+          <option value="prestamo">Préstamo</option>
+          <option value="vacaciones">Vacaciones</option>
+          <option value="baja">Baja / Incapacidad</option>
+          <option value="absentismo">Absentismo</option>
+        </select>
+      </div>
+
+    </div>
+
+    <!-- =======================================================
+         BLOQUES DINÁMICOS
+    ======================================================= -->
+
+    <!-- ANTICIPO -->
+    <div id="bloque-anticipo" class="hidden mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="font-medium text-sm text-slate-700 dark:text-white">
+            Importe anticipo (€)
+          </label>
+          <input type="number" min="0" required class="w-full border border-gray-300 dark:border-slate-600
+                   bg-white dark:bg-slate-800
+                   text-slate-900 dark:text-white
+                   rounded-md px-2 py-1" />
+        </div>
+
+        <div>
+          <label class="font-medium text-sm text-slate-700 dark:text-white">
+            Justificante anticipo (PDF)
+          </label>
+          <input type="file" accept="application/pdf" required class="text-slate-900 dark:text-white" />
+        </div>
+      </div>
+    </div>
+
+    <!-- PRÉSTAMO -->
+    <div id="bloque-prestamo" class="hidden mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <label class="font-medium text-sm text-slate-700 dark:text-white">
+            Importe total (€)
+          </label>
+          <input id="prestamo-total" type="number" min="0" required class="w-full border border-gray-300 dark:border-slate-600
+                   bg-white dark:bg-slate-800
+                   text-slate-900 dark:text-white
+                   rounded-md px-2 py-1" />
+        </div>
+
+        <div>
+          <label class="font-medium text-sm text-slate-700 dark:text-white">
+            Cuota mensual (€)
+          </label>
+          <input id="prestamo-cuota" type="number" min="0" required class="w-full border border-gray-300 dark:border-slate-600
+                   bg-white dark:bg-slate-800
+                   text-slate-900 dark:text-white
+                   rounded-md px-2 py-1" />
+        </div>
+
+        <div>
+          <label class="font-medium text-sm text-slate-700 dark:text-white">
+            Meses devolución
+          </label>
+          <input id="prestamo-meses" type="number" readonly class="w-full border border-gray-300 dark:border-slate-600
+                   bg-gray-50 dark:bg-slate-700
+                   text-slate-900 dark:text-white
+                   rounded-md px-2 py-1" />
+        </div>
+      </div>
+    </div>
+
+    <!-- VACACIONES -->
+    <div id="bloque-vacaciones" class="hidden mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="font-medium text-sm text-slate-700 dark:text-white">
+            Inicio vacaciones
+          </label>
+          <input type="date" required class="w-full border border-gray-300 dark:border-slate-600
+                   bg-white dark:bg-slate-800
+                   text-slate-900 dark:text-white
+                   rounded-md px-2 py-1" />
+        </div>
+
+        <div>
+          <label class="font-medium text-sm text-slate-700 dark:text-white">
+            Fin vacaciones
+          </label>
+          <input type="date" required class="w-full border border-gray-300 dark:border-slate-600
+                   bg-white dark:bg-slate-800
+                   text-slate-900 dark:text-white
+                   rounded-md px-2 py-1" />
+        </div>
+      </div>
+    </div>
+
+    <!-- BAJA -->
+    <div id="bloque-baja" class="hidden mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="font-medium text-sm text-slate-700 dark:text-white">
+            Inicio baja
+          </label>
+          <input type="date" required class="w-full border border-gray-300 dark:border-slate-600
+                   bg-white dark:bg-slate-800
+                   text-slate-900 dark:text-white
+                   rounded-md px-2 py-1" />
+        </div>
+
+        <div>
+          <label class="font-medium text-sm text-slate-700 dark:text-white">
+            Parte de baja (PDF)
+          </label>
+          <input type="file" accept="application/pdf" required class="text-slate-900 dark:text-white" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ABSENTISMO -->
+    <div id="bloque-absentismo" class="hidden mb-8">
+      <div class="grid grid-cols-1 gap-6">
+        <div>
+          <label class="font-medium text-sm text-slate-700 dark:text-white">
+            Fecha(s) absentismo
+          </label>
+          <input type="date" required class="w-full border border-gray-300 dark:border-slate-600
+                   bg-white dark:bg-slate-800
+                   text-slate-900 dark:text-white
+                   rounded-md px-2 py-1" />
+        </div>
+
+        <div>
+          <label class="font-medium text-sm text-slate-700 dark:text-white">
+            Observaciones <span class="text-xs text-gray-400 dark:text-slate-400">(opcional)</span>
+          </label>
+          <textarea rows="3" class="w-full border border-gray-300 dark:border-slate-600
+                   bg-white dark:bg-slate-800
+                   text-slate-900 dark:text-white
+                   rounded-md px-2 py-1 resize-none"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================
+         BOTÓN
+    ======================================================= -->
+    <button id="enviar" type="submit" disabled
+      class="mt-10 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md disabled:opacity-50">
+
+      Enviar comunicación
+    </button>
+
+  </form>
+</section>
