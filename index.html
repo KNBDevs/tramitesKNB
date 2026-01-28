@@ -52,45 +52,60 @@
     </div>
   </header>
 
-  <!-- NAV TABS -->
+  <!-- NAV TABS / BURGER -->
   <nav
-    class="tabs flex justify-center bg-white dark:bg-slate-900 border-b border-slate-300 dark:border-slate-700 transition-colors duration-300">
-    <div class="flex flex-wrap justify-center gap-2 px-4 py-3">
+    class="bg-white dark:bg-slate-900 border-b border-slate-300 dark:border-slate-700 transition-colors duration-300">
 
-      <button class="tab active text-slate-900 dark:text-white" data-view="altas">
-        ALTAS
+<div class="relative max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+
+      <!-- BOTÓN BURGER (solo móvil) -->
+      <button id="burger-toggle" class="md:hidden text-slate-900 dark:text-white text-2xl" aria-label="Abrir menú">
+        ☰
       </button>
 
-      <button class="tab text-slate-700 dark:text-white/80 hover:dark:text-white" data-view="bajas">
-        BAJAS
-      </button>
+      <!-- CONTENEDOR TABS -->
+      <div id="nav-tabs" class="tabs hidden md:flex md:flex-row flex-col
+         absolute md:static top-full left-0 right-0
+         bg-white dark:bg-slate-900
+         border-t border-slate-300 dark:border-slate-700
+         md:border-0
+         gap-2 px-4 py-3 md:p-0 z-40">
 
-      <button class="tab text-slate-700 dark:text-white/80 hover:dark:text-white" data-view="cambio-jornada">
-        CAMBIOS JORNADA
-      </button>
+        <button class="tab active text-slate-900 dark:text-white" data-view="altas">
+          ALTAS
+        </button>
 
-      <button class="tab text-slate-700 dark:text-white/80 hover:dark:text-white" data-view="incidencias">
-        INCIDENCIAS
-      </button>
+        <button class="tab text-slate-700 dark:text-white/80 hover:dark:text-white" data-view="bajas">
+          BAJAS
+        </button>
 
-      <button class="tab text-slate-700 dark:text-white/80 hover:dark:text-white" data-view="sanciones">
-        SANCIONES
-      </button>
+        <button class="tab text-slate-700 dark:text-white/80 hover:dark:text-white" data-view="cambio-jornada">
+          CAMBIOS JORNADA
+        </button>
 
-      <button class="tab text-slate-700 dark:text-white/80 hover:dark:text-white" data-view="consultas">
-        CONSULTAS
-      </button>
+        <button class="tab text-slate-700 dark:text-white/80 hover:dark:text-white" data-view="incidencias">
+          INCIDENCIAS
+        </button>
 
-      <!-- ✅ NUEVA PESTAÑA: VACACIONES -->
-      <button
-        class="tab tab-vacaciones text-emerald-700 dark:text-emerald-300 hover:text-emerald-800 hover:dark:text-emerald-200"
-        data-view="vacaciones">
-        VACACIONES
-      </button>
+        <button class="tab text-slate-700 dark:text-white/80 hover:dark:text-white" data-view="sanciones">
+          SANCIONES
+        </button>
 
+        <button class="tab text-slate-700 dark:text-white/80 hover:dark:text-white" data-view="consultas">
+          CONSULTAS
+        </button>
+
+        <button
+          class="tab tab-vacaciones text-emerald-700 dark:text-emerald-300 hover:text-emerald-800 hover:dark:text-emerald-200"
+          data-view="vacaciones">
+          VACACIONES
+        </button>
+
+      </div>
 
     </div>
   </nav>
+
 
   <!-- CONTENT -->
   <main id="content" class="content px-4 py-6">
