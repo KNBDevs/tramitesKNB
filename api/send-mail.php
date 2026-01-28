@@ -30,9 +30,9 @@ try {
     // CONFIGURACIÓN BÁSICA
     // ===============================
     $mail->CharSet = 'UTF-8';
-    $mail->setFrom('tramites@tramites.knbcomp.com', 'Trámites laborales');
-    $mail->addAddress('laboral@mesaredonda.es');
-    $mail->addReplyTo('laboral@mesaredonda.es');
+    $mail->setFrom('email_que_aparecera_como_remitente', 'Trámites laborales');
+    $mail->addAddress('email_de_destino_de_la_comunicacion');
+    $mail->addReplyTo('email_de_destino_de_la_comunicacion');
     $mail->Subject = $subject;
     $mail->isHTML(false);
 
